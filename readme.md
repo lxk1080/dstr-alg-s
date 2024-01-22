@@ -58,18 +58,51 @@
      - 有效的括号
        - <img src="./picture/11.jpg" width="40%" height="auto">
        - 代码：[有效括号.js](./src/数据结构/栈/有效括号.js)
+       - 来源：[leetcode 20](https://leetcode.cn/problems/valid-parentheses/description/)
      - 函数调用堆栈
        - <img src="./picture/12.jpg" width="40%" height="auto">
+       - 这个可以去看我之前的文章[《深入 js 执行上下文》](https://juejin.cn/post/7206998548343373884)
 
+
+2. 队列
+    - 先进先出的数据结构，js 中没有队列，同样也可以使用 Array 实现队列的所有功能
+    - 什么场景使用队列？
+      - 食堂排队打饭
+      - js 运行的异步队列
+      - 最近的请求次数
+        - 在某一时刻发起请求，并以当前时刻为基准，统计前 3000ms 一共发送了多少个请求，也就是说要返回一个数字。详细题目请看：[leetcode 933](https://leetcode.cn/problems/number-of-recent-calls/description/) ，当然，题目说的未必有我的清楚
+        - 代码：[请求次数.js](./src/数据结构/队列/请求次数.js)
+
+
+3. 链表
+    - 多个元素组成的列表，元素存储不连续，用 next 指针连在一起，在 js 中可以使用 Object 来模拟链表
+    - <img src="./picture/13.jpg" width="40%" height="auto">
+    - 数组和链表有啥区别？
+      - 数组：连续的存储结构，增删非首尾元素时，往往需要移动元素
+      - 链表：增删非首尾元素不需要移动元素，只需要更改 next 的指向即可
+    - 链表数据结构模拟：[模拟链表.js](./src/数据结构/链表/模拟链表.js)
+    - 做几道题：
+      - 删除链表中的节点：
+        - 来源：[leetcode 237](https://leetcode.cn/problems/delete-node-in-a-linked-list/description/)
+        - 代码：[删除节点.js](./src/数据结构/链表/删除节点.js)
+        - 思路：删除下一个节点
+      - 反转链表：
+        - 来源：[leetcode 206](https://leetcode.cn/problems/reverse-linked-list/)
+        - 代码：[反转链表.js](./src/数据结构/链表/反转链表.js)
+        - 思路：使用双指针遍历
+      - 两数想加：
+        - 来源：[leetcode 2](https://leetcode.cn/problems/add-two-numbers/)
+        - 代码：[两数想加.js](./src/数据结构/链表/两数想加.js)
+        - 思路：常规加，注意进位
 
 
 
 
   
-  
-  
-  
-  
+
+
+
+
   
 
 
