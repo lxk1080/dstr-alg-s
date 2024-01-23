@@ -93,7 +93,44 @@
       - 两数想加：
         - 来源：[leetcode 2](https://leetcode.cn/problems/add-two-numbers/)
         - 代码：[两数想加.js](./src/数据结构/链表/两数想加.js)
-        - 思路：常规加，注意进位
+        - 思路：常规加法，注意进位问题
+      - 排序链表去重：
+        - 来源：[leetcode 83](https://leetcode.cn/problems/remove-duplicates-from-sorted-list/description/)
+        - 代码：[排序链表去重.js](./src/数据结构/链表/排序链表去重.js)
+        - 思路：遍历去重
+      - 判断环形链表：
+        - 来源：[leetcode 141](https://leetcode.cn/problems/linked-list-cycle/)
+        - 代码：[判断环形链表.js](./src/数据结构/链表/判断环形链表.js)
+        - 思路：操场上跑的快的肯定会追上跑得慢的
+      - 实现 `instanceOf` 方法：
+        - 来源：js 原型链的原理
+        - 代码：[myInstanceOf.js](./src/数据结构/链表/myInstanceOf.js)
+        - 思路：顺着 A 的 `__proto__` 找，如果和 B.prototype 相等，即为 true
+      - 获取 json 节点：
+        - 来源：重写获取不定层级值函数
+        - 代码：[jsonNode.js](./src/数据结构/链表/jsonNode.js)
+        - 思路：利用类似链表遍历的结构
+      - 判断回文链表：
+        - 来源：[leetcode 234](https://leetcode.cn/problems/palindrome-linked-list/)
+        - 代码：[判断回文链表.js](./src/数据结构/链表/判断回文链表.js)
+        - 思路：第一想法是转数组对比，但是这种方法太耗时耗内存了，所以改为对链表截断后遍历对比。使用数组的时空复杂度都是 `O(n)`，使用截断遍历对比后的时间复杂度是 `O(n)`，空间复杂度是 `O(1)`，事实上，虽然时间复杂度相同，但实际运行时间也大大缩减了
+
+
+4. 集合
+    - 一种<span style="color: orange">无序且唯一</span>的数据结构，ES6 中有集合，就是 Set
+    - 做几道题：
+      - 数组交集去重：
+        - `return [...new Set(nums1)].filter((n) => nums2.includes(n))`
+        - 经典的没话说，需要注意的一点是：对数组先去重再筛选，比先筛选再去重的运行速度要快一些
+        - 时间复杂度(TC)：O(mn)，m 是 nums1 的长度，是 filter 的时间，n 是 nums2 的长度，是调用 includes 方法的时间
+        - 空间复杂度(SC)：O(m)，m 是 nums1 扩展出的数组长度
+
+
+5. 字典
+    - 以<span style="color: orange">键值对</span>的形式存储<span style="color: orange">唯一值</span>的数据结构，ES6 中的字典，就是 Map
+    - 
+
+
 
 
 
@@ -103,7 +140,6 @@
 
 
 
-  
 
 
 
