@@ -120,22 +120,59 @@
     - 一种<span style="color: orange">无序且唯一</span>的数据结构，ES6 中有集合，就是 Set
     - 做几道题：
       - 数组交集去重：
-        - `return [...new Set(nums1)].filter((n) => nums2.includes(n))`
-        - 经典的没话说，需要注意的一点是：对数组先去重再筛选，比先筛选再去重的运行速度要快一些
+        - 来源：[leetcode 349](https://leetcode.cn/problems/intersection-of-two-arrays/description/)
+        - 代码：`return [...new Set(nums1)].filter((n) => nums2.includes(n))`
+        - 思路：经典的没话说，需要注意的一点是：对数组先去重再筛选，比先筛选再去重的运行速度要快一些（因为省去了对重复值的筛选）
         - 时间复杂度(TC)：O(mn)，m 是 nums1 的长度，是 filter 的时间，n 是 nums2 的长度，是调用 includes 方法的时间
         - 空间复杂度(SC)：O(m)，m 是 nums1 扩展出的数组长度
 
 
 5. 字典
     - 以<span style="color: orange">键值对</span>的形式存储<span style="color: orange">唯一值</span>的数据结构，ES6 中的字典，就是 Map
-    - 
+    - 做几道题：
+      - 数组交集去重（与上面 Set 是同一道题）：
+        - 来源：[leetcode 349](https://leetcode.cn/problems/intersection-of-two-arrays/description/)
+        - 代码：[数组交集去重.js](./src/数据结构/字典/数组交集去重.js)
+        - 思路：使用 Map 去重一个数组后，遍历另一个数组找相同值，找到后把值从 Map 内删除。使用这种方法对比使用 Set 方法的好处是：时间复杂度从 O(mn) 降到了 O(n)，因为不需要 includes 去做筛选了
+      - 有效括号（对之前使用栈解的优化）：
+        - 来源：[leetcode 20](https://leetcode.cn/problems/valid-parentheses/description/)
+        - 代码：[有效括号.js](./src/数据结构/字典/有效括号.js)
+        - 思路：对括号使用映射关系
+        - Plus：如果有需要用到这个方法，优先使用这个版本
+      - 两数之和：
+        - 来源：[leetcode 1](https://leetcode.cn/problems/two-sum/description/)
+        - 代码：[两数之和.js](./src/数据结构/字典/两数之和.js)
+        - 思路：婚姻介绍所的套路，有的话直接牵手走人，没有就先登记
+      - 无重复字符的最长子串长度：
+        - 来源：[leetcode 3](https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/)
+        - 代码：[最长子串长度.js](./src/数据结构/字典/最长子串长度.js)
+        - 思路：双指针构建滑动窗口，右指针右移，遇重复就左指针右移到前重复的下一位，无重复则左指针不动，更新窗口中字符串的长度（和前长度相比取最大），而后继续右指针右移，循环往复，最后返回长度
+      - 最小覆盖子串：
+        - 来源：[leetcode 76](https://leetcode.cn/problems/minimum-window-substring/description/)
+        - 代码：[最小覆盖子串.js](./src/数据结构/字典/最小覆盖子串.js)
+        - 思路：双指针构建滑动窗口，右指针不断右移，直到窗口中包含了目标字符串的所有字符，开始左指针右移（尽量缩小窗口的长度），一直右移到窗口中不包含目标字符串的所有字符为止，再次右指针右移，循环往复，每次左指针右移之前，记录下窗口中的字符串，最后移动完成，找到长度最短的那个字符串
 
 
+6. 树
+    - 定义
 
 
 
 
   
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
