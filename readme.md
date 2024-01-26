@@ -108,8 +108,9 @@
         - 思路：顺着 A 的 `__proto__` 找，如果和 B.prototype 相等，即为 true
       - 获取 json 节点：
         - 来源：重写获取不定层级值函数
-        - 代码：[jsonNode.js](./src/数据结构/链表/jsonNode.js)
+        - 代码：[根据路径获取json节点.js](./src/数据结构/链表/根据路径获取json节点.js)
         - 思路：利用类似链表遍历的结构
+        - 关联代码：[生成所有json节点对应路径.js](./src/数据结构/树/生成所有json节点对应路径.js)
       - 判断回文链表：
         - 来源：[leetcode 234](https://leetcode.cn/problems/palindrome-linked-list/)
         - 代码：[判断回文链表.js](./src/数据结构/链表/判断回文链表.js)
@@ -200,14 +201,41 @@
             - 解法-1：广度优先遍历带层级，相同层级的元素，把值放在同一个数组内
             - 解法-2：广度优先遍历，给相同层级的元素计数，当相同层级的元素全部遍历出队后，再遍历下一层级的元素
       - 二叉树的中序遍历：
+        - 来源：[leetcode 94](https://leetcode.cn/problems/binary-tree-inorder-traversal/description/)
+        - 代码：[二叉树中序遍历.js](./src/数据结构/树/二叉树中序遍历.js)
+        - 思路：就是二叉树的中序遍历，分为递归版和非递归版，这题最终用的是非递归版，经有限测试，非递归版本似乎比递归版本的运行速度要快
+      - 路径之和：
+        - 来源：[leetcode 112](https://coding.imooc.com/lesson/446.html#mid=36885)
+        - 代码：[路径之和.js](./src/数据结构/树/路径之和.js)
+        - 思路：深度优先，遍历时计算出节点的和，并在递归时传给下一层节点。由于二叉树的深度优先等同于先序遍历，所以用先序遍历非递归实现也可以，但是经过测试，发现先序遍历非递归运行速度更慢，所以最终这题还是使用深度优先遍历解决
+      - 遍历 json 的所有节点并生成路径：
+        - 来源：前端，可能会用到类似方法，推荐使用生成数据不包含 json 本身的（主要是包含本身没有意义，还多占用了一份空间，当然特殊情况除外）
+        - 代码：[生成所有json节点对应路径.js](./src/数据结构/树/生成所有json节点对应路径.js)
+        - 思路：其实就是递归，和深度优先类似
+        - 关联代码：[根据路径获取json节点.js](./src/数据结构/链表/根据路径获取json节点.js)
+      - 渲染树组件：
+        - 来源：前端业务可能会出现
+        - 代码：[codesandbox - 深度优先渲染树列表](https://codesandbox.io/p/sandbox/shen-du-you-xian-xuan-ran-shu-lie-biao-hr2njp?file=%2Fsrc%2FApp.js%3A62%2C1)
+        - 思路：没啥好说的，就是递归
+
+
+7. 图
+    - 图是<span style="color: orange">网状结构</span>的抽象模型，是一组由<span style="color: orange">边</span>连接的<span style="color: orange">节点</span>，图可以表示任何<span style="color: orange">二元</span>关系。在 js 中是肯定没有图这个概念的，但是老规矩，可以用 Object、Array 模拟
+    - 图的表示法有：邻接矩阵、邻接表、关联矩阵。。。，下面是邻接矩阵和邻接表示意图
+      <br/><img src="./picture/19.jpg" width="30%" height="auto">
+      <br/><img src="./picture/20.jpg" width="30%" height="auto">
+    - 图的深度和广度优先遍历
+      - 深度优先：尽可能深的搜索图的分支
+        <br/><img src="./picture/21.jpg" width="30%" height="auto">
+      - 广度优先：先访问离根节点最近的节点
+        <br/><img src="./picture/22.jpg" width="30%" height="auto">
+      - 思路：图的遍历与树的遍历类似，图与树的不同就在于：树是逐层向下的，没有回路，而图可能存在回路，所以关键就在于遍历的时候不要对节点重复访问即可
+      - 代码：[图的遍历.js](./src/数据结构/图/图的遍历.js)
+    - 做几道题:
+      - 有效数字：
         - 来源：
         - 代码：
         - 思路：
-
-
-
-
-
 
 
 
