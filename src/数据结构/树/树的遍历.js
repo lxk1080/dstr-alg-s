@@ -20,8 +20,7 @@ const deepFirst = (root) => {
  *  - 重复二三步，直到队列为空
  */
 const scopeFirst = (root) => {
-  const queue = []
-  queue.push(root)
+  const queue = [root]
   while (queue.length) {
     const item = queue.shift()
     console.log(item.val)

@@ -10,8 +10,7 @@ const deepFirst = (graph, entry) => {
   const deep = (node) => {
     visited.add(node)
     console.log(node)
-    const join = graph[node]
-    join.forEach((joinNode) => {
+    graph[node].forEach((joinNode) => {
       if (!visited.has(joinNode)) deep(joinNode)
     })
   }
@@ -36,8 +35,7 @@ const scopeFirst = (graph, entry) => {
   while (queue.length) {
     const item = queue.shift()
     console.log(item)
-    const join = graph[item]
-    join.forEach((joinNode) => {
+    graph[item].forEach((joinNode) => {
       if (!pushed.has(joinNode)) {
         queue.push(joinNode)
         pushed.add(joinNode)
@@ -51,7 +49,7 @@ const scopeFirst = (graph, entry) => {
  */
 
 // 深度优先
-// deepFirst(graph, 2)
+// deepFirst(graph, 2) // 2 0 1 3
 
 // 广度优先
-scopeFirst(graph, 2)
+scopeFirst(graph, 2) // 2 0 3 1
