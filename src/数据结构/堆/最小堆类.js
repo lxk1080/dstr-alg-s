@@ -19,8 +19,11 @@ class MinHeap {
   // 2、做节点下移操作，将堆顶的节点和它的子节点交换，直到子节点大于等于这个节点的值
   // 大小为 K 的堆中删除堆顶的时间复杂度也是 O(logK)
   pop() {
+    if (this.size() === 1) return this.heap.pop()
+    const top = this.heap[0]
     this.heap[0] = this.heap.pop()
     this.shiftDown(0)
+    return top
   }
 
   // 直接返回堆顶的节点，也就是数组第一个元素

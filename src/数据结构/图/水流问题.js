@@ -12,6 +12,7 @@ const pacificAtlantic = function(matrix) {
   if (!matrix || !matrix[0]) return []
 
   // 为两个大洋分别建立矩阵，一开始所有位置都不能流入
+  // 下面的建立空矩阵（二维数组）的 js 语法可以留意下：Array.from({ length: x }, () => fasle) 等价于 new Array(x).fill(false)
   const m = matrix.length
   const n = matrix[0].length
   const flow1 = Array.from({ length: m }, () => new Array(n).fill(false))

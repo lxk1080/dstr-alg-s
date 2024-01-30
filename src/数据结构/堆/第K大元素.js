@@ -2,6 +2,7 @@ const MinHeap = require('./最小堆类')
 
 /**
  * @desc 这道题的第一想法就是利用 js 自带的排序来解
+ * @TC O(n * logN) 指的就是这个 sort 方法的时间复杂度
  * @param {number[]} nums
  * @param {number} k
  * @return {number}
