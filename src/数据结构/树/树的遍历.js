@@ -37,7 +37,7 @@ const scopeFirst = (root) => {
  */
 
 // 深度优先
-// deepFirst(tree)
+deepFirst(tree)
 
 // 广度优先
-scopeFirst(tree)
+// scopeFirst(tree)

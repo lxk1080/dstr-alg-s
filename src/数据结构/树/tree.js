@@ -9,11 +9,29 @@ const tree = {
       children: [
         {
           val: 'd',
-          children: [],
+          children: [
+            {
+              val: 'h',
+              children: [],
+            },
+            {
+              val: 'i',
+              children: [],
+            }
+          ],
         },
         {
           val: 'e',
-          children: [],
+          children: [
+            {
+              val: 'j',
+              children: [],
+            },
+            {
+              val: 'k',
+              children: [],
+            }
+          ],
         },
       ],
     },
