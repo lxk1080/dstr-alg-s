@@ -36,7 +36,7 @@
 
 以下示例帮忙理解：
 
-- `O(1)` 只有一个变量
+- `O(1)` 只有一个或多个固定数目的变量
 
 <img src="./picture/07.jpg" width="40%" height="auto">
 
@@ -55,6 +55,7 @@
    - 什么场景使用栈？
      - 十进制转二进制
        - <img src="./picture/10.jpg" width="40%" height="auto">
+       - 代码：[十进制转二进制.js](./src/数据结构/栈/十进制转二进制.js)
      - 有效的括号
        - <img src="./picture/11.jpg" width="40%" height="auto">
        - 代码：[有效括号.js](./src/数据结构/栈/有效括号.js)
@@ -147,7 +148,7 @@
       - 无重复字符的最长子串长度：
         - 来源：[leetcode 3](https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/)
         - 代码：[最长子串长度.js](./src/数据结构/字典/最长子串长度.js)
-        - 思路：双指针构建滑动窗口，右指针右移，遇重复就左指针右移到前重复的下一位，无重复则左指针不动，更新窗口中字符串的长度（和前长度相比取最大），而后继续右指针右移，循环往复，最后返回长度
+        - 思路：双指针构建滑动窗口，右指针右移，遇重复就左指针右移到左边的重复字符的下一位，无重复则左指针不动，更新窗口中字符串的长度（和前长度相比取最大），而后继续右指针右移，循环往复，最后返回长度
       - 最小覆盖子串：
         - 来源：[leetcode 76](https://leetcode.cn/problems/minimum-window-substring/description/)
         - 代码：[最小覆盖子串.js](./src/数据结构/字典/最小覆盖子串.js)

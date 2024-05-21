@@ -14,9 +14,9 @@ const reverseList = function(head) {
   let p2 = head
   while (p2) {
     const tmp = p2.next
-    p2.next = p1
-    p1 = p2
-    p2 = tmp
+    p2.next = p1 // 1、反转
+    p1 = p2 // 2、p1 指向下一个
+    p2 = tmp // 3、p2 指向下一个（代码写到这，意识到 p2.next 需要先保存一下）
   }
   return p1
 }

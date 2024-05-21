@@ -18,7 +18,7 @@ const lengthOfLongestSubstring = function(s) {
   const map = new Map()
   // 右指针逐渐右移
   for (let right = 0; right < s.length; right++) {
-    // 如果当前右指针指向的字符已经存在，并且这个已经存在的字符，它的位置不能在左指针的前面（也就是说它必须要在窗口内）
+    // 如果当前右指针指向的字符已经存在，并且这个已经存在的字符，它的位置不能在左指针的前面（也就是说它必须要在窗口内，例如 abba 的情况）
     if (map.has(s[right]) && map.get(s[right]) >= left) {
       // 左指针右移到这个已经存在的字符位置的下一位
       left = map.get(s[right]) + 1

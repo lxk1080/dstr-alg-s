@@ -44,8 +44,34 @@ const inOrder = (root) => {
     }
     const item = stack.pop()
     console.log(item.val)
-    if (item.right) {
-      p = item.right
+    p = item.right
+  }
+}
+
+/**
+ * 上面的写法及其难以理解！！！可以参考下面的写代码顺序
+ *  - 可以发现上面的代码其实就是把处理 left 节点那部分代码合并在一起了，导致思路不清晰
+ *  - 我们平时写代码按照下面这个顺序写即可，写完再合并公共代码，就是上面的代码了
+ * @param root
+ */
+function inOrderOrigin(root) {
+  const stack = []
+  let p = root
+  // 1、先从根节点找到所有的 left 节点依次入栈
+  while (p) {
+    stack.push(p)
+    p = p.left
+  }
+  // 2、全部入栈后开始出栈执行（从左下到右上的方向：左-根）
+  while (stack.length) {
+    const item = stack.pop()
+    console.log(item.val)
+    // 3、左节点和根节点都处理完，开始处理右节点
+    p = item.right
+    // 4、右节点也要从其下面的 left 节点开始遍历，所以先把 left 节点依次入栈（这个代码和上面 1 步骤代码完全相同）
+    while (p) {
+      stack.push(p)
+      p = p.left
     }
   }
 }
