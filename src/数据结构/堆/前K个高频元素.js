@@ -28,6 +28,7 @@ const topKFrequent = function(nums, k) {
     map.set(n, map.get(n) ? map.get(n) + 1 : 1)
   })
   const h = new MinHeap()
+  // 注意 Map 的 forEach 方法给的参数是 (value, key)
   map.forEach((count, num) => {
     h.insert({ count, num })
     if (h.size() > k) {

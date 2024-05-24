@@ -54,10 +54,10 @@ const isNumber = function(s) {
   let status = 0
   for (let i = 0; i < s.length; i++) {
     const type = getTypeFromChar(s[i])
-    if (graph[status][type] === undefined) {
+    status = graph[status][type]
+    if (status === undefined) {
       return false
     }
-    status = graph[status][type]
   }
   return [3, 5, 6].includes(status)
 }
