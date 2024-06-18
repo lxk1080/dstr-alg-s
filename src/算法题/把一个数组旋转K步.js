@@ -14,7 +14,7 @@
 function rotate1(arr, k) {
   const len = arr.length
   if (!len || !k) return arr
-  const step = k % len // 如果旋转的步数是数组的长度，则数组不变，所以这里取余数即可
+  const step = Math.abs(k % len) // 如果旋转的步数是数组的长度，则数组不变，所以这里取余数即可。使用绝对值，是为了兼容 k 是负数的情况
   for (let i = 0; i < step; i++) {
     const item = arr.pop()
     if (item) {
@@ -31,7 +31,7 @@ function rotate1(arr, k) {
 function rotate2(arr, k) {
   const len = arr.length
   if (!len || !k) return arr
-  const step = k % len
+  const step = Math.abs(k % len)
   const part1 = arr.slice(-step)
   const part2 = arr.slice(0, len - step)
   return part1.concat(part2)
@@ -39,6 +39,8 @@ function rotate2(arr, k) {
 
 /**
  * 测试代码
+ *  - 如果能配合上单元测试保证算法的健壮性是最好的，可以使用 jest 做单元测试
+ *  - 可以测试的情况有：正常参数、空数组、k 是负数、k 是 0 等等
  */
 
 console.log(rotate1([1, 2, 3, 4, 5, 6, 7], 3))
