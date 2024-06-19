@@ -21,3 +21,28 @@ const twoSum = function(nums, target) {
     }
   }
 }
+
+/**
+ * @desc 这一题如果给出的数组，里面的数字是递增的，可以用下面的算法（仅适用于递增数组！）
+ *  - 先让最小的数字和最大的数字想加
+ *  - 如果大于目标值，右指针往左移一位，也就是让数字小点
+ *  - 如果小于目标值，左指针往右移一位，也就是让数字大点
+ *  - 到最后，如果左右指针相交了，说明找不到了
+ * @TC O(n) 最坏的情况需要遍历数组中所有数字
+ * @SC O(1) 固定变量，这也是比上面算法更好的原因，不需要额外的空间
+ */
+function liangshuzhihe(arr, target) {
+  let lowIndex = 0
+  let higIndex = arr.length - 1
+  while (lowIndex < higIndex) {
+    const he = arr[lowIndex] + arr[higIndex]
+    if (he > target) {
+      higIndex -= 1
+    } else if (he < target) {
+      lowIndex += 1
+    } else {
+      return [lowIndex, higIndex]
+    }
+  }
+  return []
+}
