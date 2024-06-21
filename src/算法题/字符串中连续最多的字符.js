@@ -40,5 +40,6 @@ function countCalc(str) {
 
 console.log(countCalc('aaabbbbccdddeee'))
 console.log(countCalc('aaabbbbccdddeeeee'))
+console.log(countCalc('cccccc'))
 console.log(countCalc('abcde'))
 console.log(countCalc(''))
