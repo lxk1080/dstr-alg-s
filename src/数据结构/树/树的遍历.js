@@ -12,6 +12,23 @@ const deepFirst = (root) => {
 }
 
 /**
+ * @desc 深度优先遍历（非递归）
+ *  - 使用栈即可，因为后进先出，注意要反序压栈
+ */
+const deepFirst2 = (root) => {
+  const stack = [root]
+  while(stack.length) {
+    const item = stack.pop()
+    console.log(item.val)
+    if (item.children) {
+      Array.from(item.children).reverse().forEach((child) => {
+        stack.push(child)
+      })
+    }
+  }
+}
+
+/**
  * @desc 广度优先遍历
  *  - 使用队列，先进先出，逐层的 children 慢慢排队，按顺序执行
  *  - 新建一个队列，把根节点入队
@@ -38,6 +55,9 @@ const scopeFirst = (root) => {
 
 // 深度优先
 deepFirst(tree)
+
+// 深度优先（非递归）
+// deepFirst2(tree)
 
 // 广度优先
 // scopeFirst(tree)
