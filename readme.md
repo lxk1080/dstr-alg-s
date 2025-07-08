@@ -126,6 +126,10 @@
 
 4. 集合
     - 一种<span style="color: orange">无序且唯一</span>的数据结构，ES6 中有集合，就是 Set
+    - 注意，在 JS 中，Set 是有序且唯一的，按插入顺序排列，只是它并没有索引，不好控制排序，Set 主要强调的是唯一
+      - Set 想要实现手动排序的方法:
+        - 通过数组，重建 Set 实现排序，`new Set([...set].sort((a, b) => a - b))`，不过意义不大，没有索引
+        - 删除并重新添加元素
     - 做几道题：
       - 数组交集去重：
         - 来源：[leetcode 349](https://leetcode.cn/problems/intersection-of-two-arrays/description/)
@@ -137,7 +141,11 @@
 
 5. 字典
     - 以<span style="color: orange">键值对</span>的形式存储<span style="color: orange">唯一值</span>的数据结构，ES6 中的字典，就是 Map
-    - 注意 Map 是有序的，严格按插入顺序，对象 Obj 是无序的（严格来说，在对象中数值键会按升序自动排序，而字符串和符号则按插入排序-不过这个也是 ES2015 之后的事了）
+    - 注意 Map 是有序的，严格按插入顺序，对象 Obj 是无序的，Map 强调键值对的顺序，Map 在排序这块和 Set 差不多
+      - 在对象中，严格来说，数值键会按升序自动排序，而字符串和符号则按插入排序（不过这个也是 ES2015 之后的事了）
+      - Map 想要实现手动排序的方法:
+        - 通过数组，重建 Map 实现排序，`new Map([...map.entries()].sort((a, b) => a[1] - b[1]))`，因为有键值对，所以排序有一定的意义
+        - 删除并重新插入键值对
     - 做几道题：
       - 数组交集去重（与上面 Set 是同一道题）：
         - 来源：[leetcode 349](https://leetcode.cn/problems/intersection-of-two-arrays/description/)
