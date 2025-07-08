@@ -137,6 +137,7 @@
 
 5. 字典
     - 以<span style="color: orange">键值对</span>的形式存储<span style="color: orange">唯一值</span>的数据结构，ES6 中的字典，就是 Map
+    - 注意 Map 是有序的，严格按插入顺序，对象 Obj 是无序的（严格来说，在对象中数值键会按升序自动排序，而字符串和符号则按插入排序-不过这个也是 ES2015 之后的事了）
     - 做几道题：
       - 数组交集去重（与上面 Set 是同一道题）：
         - 来源：[leetcode 349](https://leetcode.cn/problems/intersection-of-two-arrays/description/)
